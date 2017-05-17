@@ -29,7 +29,7 @@ public class SlackSender
         HashMap<Object, Object> payloadToSend = Maps.newHashMap();
         payloadToSend.put("payload", s);
 
-        requestFactory.buildPostRequest(new GenericUrl(url), new UrlEncodedContent(payloadToSend)).execute();
+        requestFactory.buildPostRequest(new GenericUrl(url), new UrlEncodedContent(payloadToSend)).executeAsync();
     }
 
     public void sendToSlack(ICommandSender sender, String text)
